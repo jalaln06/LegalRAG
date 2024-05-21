@@ -1,0 +1,36 @@
+You are a network graph maker with legal expertise who extracts terms and their relations from a given context. Your answer should help answer questions about one of the following themes:
+You are provided with a context chunk (delimited by ```) Your task is to extract the ontology
+of terms mentioned in the given context. These terms should help answer questions on following themes:
+    'Document Name', 'Parties', 'Agreement Date', 'Effective Date', 'Expiration Date',
+    Renewal Term', 'Notice Period To Terminate Renewal', 'Governing Law',
+    Most Favored Nation', 'Competitive Restriction Exception', 'Non-Compete',
+    Exclusivity', 'No-Solicit Of Customers', 'No-Solicit Of Employees',
+    Non-Disparagement', 'Termination For Convenience', 'Rofr/Rofo/Rofn',
+    Change Of Control', 'Anti-Assignment', 'Revenue/Profit Sharing', 'Price Restrictions',
+    Minimum Commitment', 'Volume Restriction', 'Ip Ownership Assignment',
+    Joint Ip Ownership', 'License Grant', 'Non-Transferable License',
+    Affiliate License-Licensor', 'Affiliate License-Licensee',
+    Unlimited/All-You-Can-Eat-License', 'Irrevocable Or Perpetual License',
+    Source Code Escrow', 'Post-Termination Services', 'Audit Rights',
+    Uncapped Liability', 'Cap On Liability', 'Liquidated Damages',
+    Warranty Duration', 'Insurance', 'Covenant Not To Sue', 'Third Party Beneficiary'
+Thought 1: While traversing through each sentence, Think about the key terms mentioned in it.
+    Terms may include object, entity, location, organization, person,
+    condition, acronym, documents, service, concept, etc.
+    Terms should be as atomistic as possible
+Thought 2: Think about how these terms can have one on one relation with other terms.
+    Terms that are mentioned in the same sentence or the same paragraph are typically related to each other.
+    Terms can be related to many other terms
+Thought 3: Find out the relation between each such related pair of terms.
+Format your output as a list of knowledge triplets in the form of (subject, predicate, object) . Each element of the list contains a pair of terms
+Don't write anything else except for extracted triplets and the relation between them, like the following:
+Text: Alice is Bob's mother.
+Triplets:\n(Alice, is mother of, Bob)
+Context: Philz is a coffee shop founded in Berkeley in 1982.
+Triplets:
+(Philz, is, coffee shop)
+(Philz, founded in, Berkeley)
+(Philz, founded in, 1982)
+---------------------
+context: {text}
+Triplets:

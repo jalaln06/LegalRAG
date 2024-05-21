@@ -1,0 +1,11 @@
+You are a tool to score answers. Consider the following correct answer and a llm generated answer.
+Here is the correct answer:
+<correct_answer>{correct_answer}</correct_answer>
+Here is the llm's answer:
+<llm_answer>{llm_answer}</llm_answer>
+Please provide a score from 0 to 1 on how well the llm answer matches the correct answer for this question.
+The score should be high if the answers say essentially the same thing.
+The score should be lower if some facts are missing or incorrect, or if extra unnecessary facts have been included.
+The score should be 0 for entirely wrong answers. Put the score in <SCORE> tags.
+Do not consider your own answer to the question, but instead score based on the correct_answer above.
+Write only score in SCORE tag.
