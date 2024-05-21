@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+numpy
+pandas
+langchain
+langchain-community
+scikit-learn
+networkx
+requests
+llama-index
+llama-index-llms-ollama
+llama-index-embeddings-ollama
+jupyter
+pyvis
